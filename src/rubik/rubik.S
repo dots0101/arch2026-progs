@@ -1,17 +1,9 @@
-# rubik_solve_asm: optimal 2x2x2 cube solver, hand-written RV32I.
-#
-# int rubik_solve_asm(const char *state, char *out, size_t cap)
-#                                   a0 = state, a1 = out, a2 = cap; result in a0
-#
-# RV32I and Zicsr only: no mul, div, rem, no floating point, no compressed
-# instructions, no heap, no recursion. Tests: tests/trubik.c.
-
+# Directly authored RV32I, not compiler output. AI assistance is disclosed.
+# Radius-eight H48 database + an on-target prefix search of depth at most 3.
+# The two implementations own separate copies of all immutable tables.
+    .option norvc
     .text
-
-    .globl  rubik_solve_asm
-    .type   rubik_solve_asm, @function
-    .align  2
-rubik_solve_asm:
-    li      a0, -1
-    ret
-    .size   rubik_solve_asm, .-rubik_solve_asm
+    .include "src/rubik/rubik_search.inc"
+    .include "src/rubik/rubik_canon.inc"
+    .include "src/rubik/rubik_tables.inc"
+    .section .note.GNU-stack,"",@progbits
