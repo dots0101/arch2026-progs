@@ -1,0 +1,14 @@
+{
+  "cases": 2228480,
+  "nonwrapping_cases": 2163188,
+  "wrapping_cases": 65292,
+  "mismatches": 0,
+  "error_denominator": 1099511627776,
+  "min_nonwrapping_error_numerator": -524287,
+  "min_error_at": [1, 524287],
+  "max_nonwrapping_error_numerator": 524288,
+  "max_error_at": [1, 524288],
+  "max_wrapping_abs_error_numerator": 4611686018427387908,
+  "max_wrapping_error_at": [2147483646, 2147483646],
+  "max_wrapping_error_result": -8192
+}

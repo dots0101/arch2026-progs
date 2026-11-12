@@ -1,0 +1,36 @@
+  CC	build/rubik/O1/main.o
+  CC	build/rubik/O3/main.o
+  CC	build/rubik/O3/test.o
+  CC	build/rubik/O1/test.o
+  CC	build/rubik/Os/main.o
+  CC	build/rubik/Os/test.o
+  CC	build/neg/main.o
+  LD	build/neg/neg.elf
+  LD	build/rubik/O1/rubik.elf
+  LD	build/rubik/O3/rubik.elf
+  LD	build/rubik/Os/rubik.elf
+listings: build/<prog>/<opt>/<prog>.dis and build/<prog>/asm.dis
+scripts/driver.py --emu third_party/rv32emu/build/rv32emu --build build --prefix riscv-none-elf- 
+--- toolchain    PASS    3.8/5
+--- emulator     PASS    7.5/10
+--- rubik        FAIL    0.0/15
+    x solve: the assembly takes 86539.3 cycles per call, the best C build (-O3) 84019.0
+--- bf16         PASS   15.0/15
+--- gcd          PASS   15.0/15
+--- fixed        PASS   15.0/15
+--- disassembly  PASS    3.8/5
+--- cycles       PASS    7.5/10
+    - bf16.from_f32: assembly is slower than the best C build (0.98x)
+    - bf16.mul: assembly beats the best C build (1.53x)
+    - bf16.sqrt: assembly beats the best C build (1.04x)
+    - fixed.op1: assembly matches the best C build (1.00x)
+    - fixed.op2: assembly matches the best C build (1.00x)
+    - fixed.op3: assembly matches the best C build (1.00x)
+    - fixed.q_mul: assembly beats the best C build (1.02x)
+    - gcd.gcd: assembly beats the best C build (1.24x)
+    - rubik.solve: assembly is slower than the best C build (0.97x)
+--- footprint    PASS    3.8/5
+--- hygiene      PASS    3.8/5
+--- 3 of 4 programs pass; the other items count 75%
+--- TOTAL 75.0/100
+make: *** [Makefile:213: grade] Error 1

@@ -1,0 +1,118 @@
+{
+  "kind": "snapshot-specific static upper-bound proof accounting",
+  "scope": "rubik_solve_asm call tree, not C, startup, test harness, or host wall time",
+  "source_sha256": {
+    "src/rubik/rubik.S": "29579e535aa5c53c2cc98122a72a57beef07dba032c3292f41ab49551868cdb6",
+    "src/rubik/rubik_search.inc": "7e9e02102ab28bfce1ecc5e02af7eb6bb9129b7d3f1891780fb9a208721c4e77",
+    "src/rubik/rubik_canon.inc": "347c48340bd64d4ae7f4d04ba09a534b223b1b133823c5f0264597c6850fe3dd",
+    "src/rubik/rubik_tables.inc": "557fc6643035785adbd594aef6ad14cc2e9bd65dd5dfff5ff789593427344ff2"
+  },
+  "assembler": "GNU assembler (xPack GNU RISC-V Embedded GCC x86_64) 2.45",
+  "data_invariants": {
+    "buckets": 1197,
+    "entries": 24793,
+    "max_bucket_length": 205,
+    "maximum_stored_distance": 8,
+    "state_preservation_checks": "passed"
+  },
+  "static_instruction_counts": {
+    "rubik_solve_asm": 207,
+    ".Lr48_move": 83,
+    ".Lr48_probe": 43,
+    ".Lr48_prefix": 62,
+    ".Lr48_meta": 70,
+    ".Lr48_ori": 125,
+    ".Lr48_sym": 133,
+    ".Lr48_T": 212,
+    ".Lr48_key": 135
+  },
+  "backedge_targets": {
+    "rubik_solve_asm": {
+      ".Lsolve_length": 1,
+      ".Lsolve_parse": 1,
+      ".Lsolve_sum": 1,
+      ".Lsolve_search": 1,
+      ".Lsolve_neighbor": 1,
+      ".Lsolve_finish": 1,
+      ".Lsolve_size_loop": 1,
+      ".Lsolve_emit": 1
+    },
+    ".Lr48_move": {},
+    ".Lr48_probe": {
+      ".Lprobe_binary": 2
+    },
+    ".Lr48_prefix": {
+      ".Lprefix_turn": 1,
+      ".Lprefix_face": 1
+    },
+    ".Lr48_meta": {},
+    ".Lr48_ori": {},
+    ".Lr48_sym": {},
+    ".Lr48_T": {
+      ".Lr48_find_six": 1
+    },
+    ".Lr48_key": {
+      ".Lr48_meta_loop": 1,
+      ".Lr48_key_loop": 1
+    }
+  },
+  "static_call_sites": {
+    "rubik_solve_asm": {
+      ".Lr48_probe": 2,
+      ".Lr48_prefix": 1,
+      ".Lr48_move": 1
+    },
+    ".Lr48_move": {},
+    ".Lr48_probe": {
+      ".Lr48_key": 1
+    },
+    ".Lr48_prefix": {
+      ".Lr48_probe": 1,
+      ".Lr48_move": 1,
+      ".Lr48_prefix": 1
+    },
+    ".Lr48_meta": {},
+    ".Lr48_ori": {},
+    ".Lr48_sym": {},
+    ".Lr48_T": {},
+    ".Lr48_key": {
+      ".Lr48_T": 7,
+      ".Lr48_sym": 7,
+      ".Lr48_meta": 1,
+      ".Lr48_ori": 2
+    }
+  },
+  "dynamic_count_bounds": {
+    "prefix_leaves_by_depth": [
+      9,
+      54,
+      324
+    ],
+    "prefix_frames_by_depth": [
+      10,
+      64,
+      388
+    ],
+    "prefix_frames_total": 462,
+    "prefix_edges": 459,
+    "suffix_probes": 63,
+    "suffix_moves": 72,
+    "all_probes": 451,
+    "all_moves": 531
+  },
+  "component_instruction_bounds": {
+    "T_including_find_six": 242,
+    "canonical_key_local": 1080,
+    "canonical_key_including_callees": 7196,
+    "probe_excluding_key": 731,
+    "prefix_frame_excluding_callees": 558,
+    "move": 83,
+    "root_excluding_callees": 14904
+  },
+  "derived_call_tree_upper_bound": 3891850,
+  "published_rounded_upper_bound": 5632744,
+  "instruction_budget": 7500000,
+  "headroom_below_budget": 1867256,
+  "maximum_solver_stack_bytes": 672,
+  "status": "PASS"
+}

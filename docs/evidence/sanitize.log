@@ -1,0 +1,5 @@
+  HOSTCC	build/host/rubik
+  SAN	rubik
+  SAN	bf16
+  SAN	gcd
+  SAN	fixed

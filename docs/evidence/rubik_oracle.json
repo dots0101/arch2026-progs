@@ -1,0 +1,17 @@
+{
+  "states": 3674160,
+  "histogram": [1, 9, 54, 321, 1847, 9992, 50136, 227536, 870072, 1887748, 623800, 2644],
+  "b8_exact_matches": 3674160,
+  "b8_inside": 1159968,
+  "b8_outside": 2514192,
+  "d11_solutions_replayed": 2644,
+  "max_search_probes": 221,
+  "max_search_state": "14325671111111",
+  "max_total_b8_probes": 260,
+  "max_total_state": "14325671111111",
+  "transition_and_bfs_seconds": 0.270061,
+  "all_state_b8_seconds": 2.066398,
+  "d11_solve_and_replay_seconds": 0.250051,
+  "total_seconds": 2.586510,
+  "mismatches": 0
+}
